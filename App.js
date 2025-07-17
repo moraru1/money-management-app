@@ -1,19 +1,42 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Button, Pressable, StyleSheet, Text, View } from 'react-native';
+import { useState } from 'react';
+import Menu from './Menu';
 
 export default function App() {
+  const [showMenu, setShowMenu] = useState(false);
+  
+  if(showMenu == true)
+  {
+    return <Menu/ >;
+  }
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+
+    <Pressable 
+    style={{flex: 1}}
+    onPress={() => {
+      setShowMenu(true);
+    }}
+    >
+    <View style={appsStyle.container}>
+      <Text style={{color: "white", textAlign: "center",
+        fontFamily:"Futura"}}>
+      Hello!{'\n'}This is your CheckList app,
+      here you can organize {'\n'} your tasks and notes.
+      </Text>
+      <Text style={{color: "white", fontFamily:"Futura", 
+        position:"absolute", bottom:'30', }}>
+      Tap anywhere on the screen!
+      </Text>
+      <StatusBar style="auto"/>
     </View>
+    </Pressable>
   );
 }
-
-const styles = StyleSheet.create({
+const appsStyle = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'black',
     alignItems: 'center',
     justifyContent: 'center',
   },
