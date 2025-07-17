@@ -14,9 +14,6 @@ A simple React Native mobile app to track account balances, recurring (lunar) sp
 - AsyncStorage
 - JavaScript
 
-## 📸 Screenshots
-(Add screenshots or screen recordings here)
-
 ## 🔧 Installation
 
 ```bash
